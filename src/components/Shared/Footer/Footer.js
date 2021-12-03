@@ -25,15 +25,18 @@ const Footer = () => {
                                     </div>
 
                                 </div>
+
+
+
                                 <div className="col-lg-2 col-md-6 col-12">
 
-                                    <div className="single-footer f-link text-center">
-                                        <h3 >Solutions</h3>
+                                    <div className="single-footer f-link">
+                                        <h3>Support</h3>
                                         <ul>
-                                            <li><a href="#" className="text-decoration-none">Marketing</a></li>
-                                            <li><a href="#" className="text-decoration-none">Analytics</a></li>
-                                            <li><a href="#" className="text-decoration-none">Commerce</a></li>
-                                            <li><a href="#" className="text-decoration-none">Insights</a></li>
+                                            <li><a href="#" className="text-decoration-none">Pricing</a></li>
+                                            <li><a href="#" className="text-decoration-none">Documentation</a></li>
+                                            <li><a href="#" className="text-decoration-none">Guides</a></li>
+                                            <li><a href="#" className="text-decoration-none">API Status</a></li>
                                         </ul>
                                     </div>
 

@@ -67,7 +67,7 @@
 }
 
 .footer .single-footer.f-about .copyright-text a {
-  color: #3080e3;
+  color: #e6b30e;
 }
 
 .footer .single-footer.f-about .copyright-text a:hover {
@@ -90,7 +90,7 @@
 }
 
 .footer .single-footer.f-link li a:hover {
-  color: #3080e3;
+  color: #e6b30e;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px),
@@ -140,11 +140,11 @@
 }
 
 .footer .newsletter-form input:hover {
-  border-color: #3080e3;
+  border-color: #e6b30e;
 }
 
 .footer .newsletter-form input:focus {
-  border-color: #3080e3;
+  border-color: #e6b30e;
 }
 
 .footer .newsletter-form .button {
@@ -159,7 +159,7 @@
   height: 42px;
   width: 42px;
   border-radius: 6px;
-  background-color: #3080e3;
+  background-color: #e6b30e;
   color: #fff;
   text-align: center;
   line-height: 42px;
