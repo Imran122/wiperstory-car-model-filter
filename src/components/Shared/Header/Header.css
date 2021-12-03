@@ -17,6 +17,9 @@
 :root {
   --main-color: #e6b30e;
 }
+.nav-link {
+  color: #f1efea !important;
+}
 .act,
 .nav-link :hover {
   color: var(--main-color) !important;

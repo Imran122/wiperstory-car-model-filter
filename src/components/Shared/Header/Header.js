@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { FiAlignRight, FiXCircle, FiChevronDown } from "react-icons/fi";
 import './Header.css'
-import logo from '../../../images/logo/logo.svg'
+
 import { ButtonGroup, Container, NavLink, Navbar, NavDropdown, Nav } from 'react-bootstrap';
-import Banner from '../../Home/Banner/Banner';
+
 const Header = () => {
 
     return (
