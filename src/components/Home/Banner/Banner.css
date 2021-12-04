@@ -53,6 +53,7 @@
 .btn-banner {
   color: white;
   border-radius: 0;
+  border: 2px solid #00dabf;
   border-width: 2px;
   padding: 10px 30px;
   border-image-slice: 1;
