@@ -4,6 +4,7 @@ import './Header.css'
 
 import { ButtonGroup, Container, NavLink, Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import logo from '../../../images/logo/vector-logo.png'
+import { Link } from 'react-router-dom';
 const Header = () => {
 
     return (
@@ -17,11 +18,22 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ms-auto mx-0">
-                                <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/about-us">Contact Us</Nav.Link>
-                                <Nav.Link href="/contact-us">About Us</Nav.Link>
-                                <Nav.Link href="/contact-us">About Us</Nav.Link>
-                                <Nav.Link href="/contact-us">About Us</Nav.Link>
+                                <Nav.Link>
+                                    <Link className="text-navabr" to="/home">Home</Link>
+                                </Nav.Link>
+                                <Nav.Link>
+                                    <Link className="text-navabr" to="/make" >Car Model Make</Link>
+                                </Nav.Link>
+                                <Nav.Link>
+                                    <Link className="text-navabr" >Contact Us</Link>
+                                </Nav.Link>
+                                <Nav.Link>
+                                    <Link className="text-navabr" >SignUp</Link>
+                                </Nav.Link>
+
+                                <Nav.Link >
+                                    <Link className="text-navabr" to="/login">LogIn</Link>
+                                </Nav.Link>
 
                             </Nav>
 
