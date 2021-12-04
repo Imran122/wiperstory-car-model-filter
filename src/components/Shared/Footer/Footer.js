@@ -4,77 +4,71 @@ import logo from '../../../images/logo/logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer section">
-
-                <div className="footer-top">
-                    <div className="container">
-                        <div className="inner-content">
-                            <div className="row">
-                                <div className="col-lg-4 col-md-6 col-12">
-
-                                    <div className="single-footer f-about">
-                                        <div className="logo">
-                                            <a href="index.html">
-                                                <img src={logo} alt="#" />
-                                            </a>
-                                        </div>
-                                        <p>Find the best car model with best car company.</p>
-                                        <p className="copyright-text"><span>© 2021.</span>Designed and Developed by <a
-                                            rel="nofollow" target="_blank">wiperstory</a>
-                                        </p>
-                                    </div>
-
-                                </div>
 
 
 
-                                <div className="col-lg-2 col-md-6 col-12">
 
-                                    <div className="single-footer f-link">
-                                        <h3>Support</h3>
-                                        <ul>
-                                            <li><a href="#" className="text-decoration-none">Pricing</a></li>
-                                            <li><a href="#" className="text-decoration-none">Documentation</a></li>
-                                            <li><a href="#" className="text-decoration-none">Guides</a></li>
-                                            <li><a href="#" className="text-decoration-none">API Status</a></li>
-                                        </ul>
-                                    </div>
+            <div class="footer">
+                <div class="inner-footer">
 
-                                </div>
-                                <div className="col-lg-2 col-md-6 col-12">
 
-                                    <div className="single-footer f-link">
-                                        <h3>Support</h3>
-                                        <ul>
-                                            <li><a href="#" className="text-decoration-none">Pricing</a></li>
-                                            <li><a href="#" className="text-decoration-none">Documentation</a></li>
-                                            <li><a href="#" className="text-decoration-none">Guides</a></li>
-                                            <li><a href="#" className="text-decoration-none">API Status</a></li>
-                                        </ul>
-                                    </div>
+                    <div class="footer-items">
+                        <h1>Company Name</h1>
+                        <p>Description of your company product company.</p>
+                    </div>
 
-                                </div>
-                                <div className="col-lg-4 col-md-6 col-12">
 
-                                    <div className="single-footer newsletter">
-                                        <h3>Subscribe</h3>
-                                        <p>Subscribe to our newsletter for the latest updates</p>
-                                        <form action="#" method="get" target="_blank" className="newsletter-form">
-                                            <input name="EMAIL" placeholder="Email address" required="required" type="email" />
-                                            <div className="button">
-                                                <button className="sub-btn"><i className="lni lni-envelope"></i>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
+                    <div class="footer-items">
+                        <h3>Quick Links</h3>
+                        <div class="border1"></div>
+                        <ul>
+                            <a href="#"><li>Home</li></a>
+                            <a href="#"><li>Search</li></a>
+                            <a href="#"><li>Contact</li></a>
+                            <a href="#"><li>About</li></a>
+                        </ul>
+                    </div>
 
-                                </div>
-                            </div>
+
+                    <div class="footer-items">
+                        <h3>Recipes</h3>
+                        <div class="border1"></div>
+                        <ul>
+                            <a href="#"><li>Indian</li></a>
+                            <a href="#"><li>Chinese</li></a>
+                            <a href="#"><li>Mexican</li></a>
+                            <a href="#"><li>Italian</li></a>
+                        </ul>
+                    </div>
+
+
+                    <div class="footer-items">
+                        <h3>Contact us</h3>
+                        <div class="border1"></div>
+                        <ul>
+                            <li><i class="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc</li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i>123456789</li>
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i>xyz@gmail.com</li>
+                        </ul>
+
+
+                        <div class="social-media">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-square"></i></a>
                         </div>
                     </div>
                 </div>
 
-            </footer>
+
+                <div class="footer-bottom">
+                    Copyright &copy; wiper story 2021.
+                </div>
+            </div>
+
+
+
+
         </div>
     );
 };

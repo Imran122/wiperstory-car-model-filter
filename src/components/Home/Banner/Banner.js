@@ -4,74 +4,19 @@ import './Banner.css'
 const Banner = () => {
 
     return (
-        <div className="banner-content">
+        <div>
+            <section class="home  d-flex align-items-center" id="header">
+                <div class="container text-light" data-aos="fade-right">
+                    <h1 class="headline">Best <span class="home_text">CAR MODEL</span><br />Choice Plans For You</h1>
+                    <p class="para para-light py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus tempore accusamus quis magnam doloremque itaque ad modi, pariatur iste labore similique officiis impedit aspernatur aperiam facere architecto. Eligendi, repellendus inventore!</p>
 
-            <section class="call-action">
-                <div class="container">
-                    <div class="inner-content">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-lg-12 col-md-12 col-12 w-50">
-
-                                <div class="form-body">
-                                    <div class="row">
-                                        <div class="form-holder">
-                                            <div class="form-content">
-                                                <div class="form-items text-center">
-                                                    <h2>Welcome to size my wipers!</h2>
-                                                    <p>To get started, choose a make and model of vehicle..</p>
-                                                    <form class="requires-validation" novalidate>
-
-
-                                                        <h5>Make and Model</h5>
-                                                        <div class="col-md-12">
-                                                            <select class="form-select mt-3" required>
-                                                                <option selected disabled value="">Position</option>
-                                                                <option value="jweb">Junior Web Developer</option>
-                                                                <option value="sweb">Senior Web Developer</option>
-                                                                <option value="pmanager">Project Manager</option>
-                                                            </select>
-
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <select class="form-select mt-3" required>
-                                                                <option selected disabled value="">Position</option>
-                                                                <option value="jweb">Junior Web Developer</option>
-                                                                <option value="sweb">Senior Web Developer</option>
-                                                                <option value="pmanager">Project Manager</option>
-                                                            </select>
-
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <select class="form-select mt-3" required>
-                                                                <option selected disabled value="">Position</option>
-                                                                <option value="jweb">Junior Web Developer</option>
-                                                                <option value="sweb">Senior Web Developer</option>
-                                                                <option value="pmanager">Project Manager</option>
-                                                            </select>
-
-                                                        </div>
-
-
-
-
-
-
-
-
-                                                        <div class="form-button mt-3">
-                                                            <button id="submit" type="submit" class="btn btn-primary">SHOW NAME</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                    <div class="my-3 button-banner">
+                        <a class="btn-banner" href="#plans">View Plans</a>
                     </div>
+
                 </div>
+
+
             </section>
 
         </div>
