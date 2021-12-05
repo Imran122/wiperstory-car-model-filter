@@ -1,32 +1,40 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import './Login.css'
-const Login = () => {
-    const [loginData, setLoginData] = useState('')
-    const { user, loginUser, isLoading, authError } = useAuth()
-    const location = useLocation()
+import './Register.css'
+const Register = () => {
+    const [registerData, setRegisterData] = useState({})
     const history = useHistory()
-    const handleOnBlur = (e) => {
-
+    const { user, registerUser, isLoading, authError } = useAuth()
+    const handelOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
-        const newLoginData = { ...loginData };
-        newLoginData[field] = value;
-        setLoginData(newLoginData);
+        const newRegisterData = { ...registerData }
+        newRegisterData[field] = value;
+        setRegisterData(newRegisterData);
+
+
+    }
+    //submittting register data
+    const handelLogInSubmit = e => {
+        if (registerData.password !== registerData.password2) {
+
+            return;
+        }
+        //submittting user info by form
+        registerUser(registerData.email, registerData.password)
+
         e.preventDefault();
     }
-    const handleLoginSubmit = (e) => {
-        loginUser(loginData.email, loginData.password, location, history);
-        e.preventDefault();
-    }
+
+
     return (
         <div>
             <div className="wrapper">
                 <div className="login-container">
                     <div className="col-left">
                         <div className="login-text">
-                            <h2>Logo</h2>
+                            <h2>WiperStory</h2>
                             {isLoading &&
                                 <div class="spinner-main">
                                     <div class="loader-circle"></div>
@@ -37,10 +45,11 @@ const Login = () => {
                     </div>
                     <div className="col-right">
                         <div className="login-form">
+                            <h2>SignUp</h2>
                             {/*  after usewr creating succes message show */}
                             {user?.email &&
                                 <div class="alert alert-success" role="alert">
-                                    successfully LogIn user
+                                    successfully created user
                                 </div>
                             }
                             {/* if there is error the it will work */}
@@ -50,25 +59,31 @@ const Login = () => {
                                 </div>
                             }
 
-                            <h2>Login</h2>
+
                             {!isLoading &&
-                                <form onSubmit={handleLoginSubmit}>
+
+                                <form onSubmit={handelLogInSubmit}>
                                     <p>
-                                        <input type="email" onBlur={handleOnBlur} name="email" placeholder="Your email" required />
+                                        <input type="email" name="email" onBlur={handelOnBlur} placeholder="You Email" required />
                                     </p>
                                     <p>
-                                        <input type="password" onBlur={handleOnBlur} name="password" placeholder="Password" required />
+                                        <input type="password" onBlur={handelOnBlur} name="password" placeholder="Type Password" required />
                                     </p>
                                     <p>
-                                        <input className="btn" type="submit" value="Sing In" />
+                                        <input type="password" onBlur={handelOnBlur} name="password2" placeholder="Retype Password" required />
                                     </p>
                                     <p>
-                                        <Link to="/register">
-                                            <a>Create an account.</a>
+                                        <input className="btn" type="submit" value="SingUp" />
+                                    </p>
+                                    <p>
+                                        <Link to="/login">
+                                            <a>Already have account?</a>
                                         </Link>
+
                                     </p>
                                 </form>
                             }
+
                         </div>
                     </div>
                 </div>
@@ -78,4 +93,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

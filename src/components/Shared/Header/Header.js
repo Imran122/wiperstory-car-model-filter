@@ -2,11 +2,12 @@ import React from 'react';
 
 import './Header.css'
 
-import { ButtonGroup, Container, NavLink, Navbar, NavDropdown, Nav } from 'react-bootstrap';
+import { ButtonGroup, Container, NavLink, Navbar, NavDropdown, Nav, Button } from 'react-bootstrap';
 import logo from '../../../images/logo/vector-logo.png'
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 const Header = () => {
-
+    const { user, logOut } = useAuth()
     return (
         <>
 
@@ -28,12 +29,22 @@ const Header = () => {
                                     <Link className="text-navabr" >Contact Us</Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link className="text-navabr" >SignUp</Link>
+                                    <Link to="/register" className="text-navabr" >SignUp</Link>
                                 </Nav.Link>
 
-                                <Nav.Link >
-                                    <Link className="text-navabr" to="/login">LogIn</Link>
-                                </Nav.Link>
+                                {user?.email ?
+
+                                    <Button className="nav-button" onClick={logOut} variant="outline-secondary">LogOut</Button>
+
+
+                                    :
+                                    <Nav.Link >
+                                        <Link className="text-navabr" to="/login">LogIn</Link>
+                                    </Nav.Link>
+
+
+
+                                }
 
                             </Nav>
 

@@ -25,12 +25,13 @@ const Make = () => {
                     <div className="row justify-content-md-center">
                         <div className="col-xl-9 ">
 
-                            <table class="customer-table">
+                            <table className="customer-table">
 
                                 <thead>
                                     <tr>
                                         <th>Name</th>
                                         <th>Email</th>
+                                        <th>Phone</th>
                                         <th>Phone</th>
                                     </tr>
                                 </thead>
@@ -40,37 +41,27 @@ const Make = () => {
                                         <th>Joann Hayes</th>
                                         <td>joann.hayes@example.com</td>
                                         <td>(867)-246-3097</td>
+                                        <td>(867)-246-3097</td>
                                     </tr>
                                     <tr>
                                         <th>Cassandra Hart</th>
                                         <td>cassandra.hart@example.com</td>
+                                        <td>(768)-258-3934</td>
                                         <td>(768)-258-3934</td>
                                     </tr>
                                     <tr>
                                         <th>Thomas Willis</th>
                                         <td>thomas.willis@example.com</td>
                                         <td>(405)-864-3173</td>
+                                        <td>(405)-864-3173</td>
                                     </tr>
                                     <tr>
                                         <th>Daryl Moore</th>
                                         <td>daryl.moore@example.com</td>
                                         <td>(819)-432-0779</td>
+                                        <td>(819)-432-0779</td>
                                     </tr>
-                                    <tr>
-                                        <th>Noelle May</th>
-                                        <td>noelle.may@example.com</td>
-                                        <td>(869)-133-6465</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Connor Richardson</th>
-                                        <td>connor.richardson@example.com</td>
-                                        <td>(314)-389-5440</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Jeremiah Steeves</th>
-                                        <td>jeremiah.steeves@example.com</td>
-                                        <td>(874)-376-2306</td>
-                                    </tr>
+
                                 </tbody>
                             </table>
 

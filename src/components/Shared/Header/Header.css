@@ -2,3 +2,15 @@
   text-decoration: none;
   color: #fff;
 }
+.nav-button {
+  text-decoration: none;
+  color: none !important;
+  border: none !important;
+  background-color: none !important;
+}
+.nav-button:hover {
+  text-decoration: none;
+  color: none !important;
+  border: none !important;
+  background-color: #212529 !important;
+}
