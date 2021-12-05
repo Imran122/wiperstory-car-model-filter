@@ -6,17 +6,26 @@ import initializeFirebase from "../components/Authentication/Firebase/firebase.i
 initializeFirebase()
 const useFirebase = () => {
     const [user, setUser] = useState({})
+    const auth = getAuth();
     const [authError, setAuthError] = useState('');
     //loading snipper
     const [isLoading, setIsLoading] = useState(true);
-    const auth = getAuth();
+    const [admin, setAdmin] = useState(false);
 
-    const registerUser = (email, password) => {
+
+    const registerUser = (email, password, name) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('');
-
+                const newUser = { email, displayName: name }
+                setUser(newUser)
+                //save User to mongo Db
+                saveUser(email, name)
+                //update profile data to firebase
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                })
             })
             .catch((error) => {
                 setAuthError(error.message)
@@ -61,7 +70,15 @@ const useFirebase = () => {
         });
         return () => unsubscribe;
     }, [])
+    //using useEffect to check and call api for checking user is admin or not
 
+    useEffect(() => {
+        console.log(user.email)
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(response => response.json())
+            .then(data => setAdmin(data.admin))
+        console.log('firebase hooks', admin)
+    }, [user.email])
 
     const logOut = () => {
         setIsLoading(true)
@@ -72,13 +89,28 @@ const useFirebase = () => {
         })
             .finally(() => setIsLoading(false))
     }
+
+    //save user to mongo DB
+    const saveUser = (email, displayName) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+
+
     return {
         user,
         registerUser,
         logOut,
         loginUser,
         isLoading,
-        authError
+        authError,
+        saveUser,
+        admin
     }
 }
 export default useFirebase;

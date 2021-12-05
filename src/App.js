@@ -16,7 +16,11 @@ import Register from './components/Authentication/Registration/Register';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import Admin from './components/Admin/Admin';
 import PrivateRoute from './components/Authentication/PrivateRoute/PrivateRoute';
+import AdminRoute from './components/Authentication/AdminRoute/AdminRoute';
+import MakeAdmin from './components/MakeAdmin/MakeAdmin';
+
 function App() {
+
   return (
     <div>
       <AuthProvider>
@@ -33,9 +37,16 @@ function App() {
             <Route path="/make">
               <Make></Make>
             </Route>
-            <PrivateRoute path="/admin">
+
+
+            <AdminRoute path="/admin">
               <Admin></Admin>
-            </PrivateRoute>
+            </AdminRoute>
+
+            <Route path="/makeadmin">
+              <MakeAdmin></MakeAdmin>
+            </Route>
+
             <Route path="/register">
               <Register></Register>
             </Route>

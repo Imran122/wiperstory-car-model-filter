@@ -22,7 +22,7 @@ const Register = () => {
             return;
         }
         //submittting user info by form
-        registerUser(registerData.email, registerData.password)
+        registerUser(registerData.email, registerData.password, registerData.name)
 
         e.preventDefault();
     }
@@ -63,6 +63,9 @@ const Register = () => {
                             {!isLoading &&
 
                                 <form onSubmit={handelLogInSubmit}>
+                                    <p>
+                                        <input type="text" name="name" onBlur={handelOnBlur} placeholder="You User Name" required />
+                                    </p>
                                     <p>
                                         <input type="email" name="email" onBlur={handelOnBlur} placeholder="You Email" required />
                                     </p>

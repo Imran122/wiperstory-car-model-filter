@@ -7,7 +7,7 @@ import logo from '../../../images/logo/vector-logo.png'
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 const Header = () => {
-    const { user, logOut } = useAuth()
+    const { user, logOut, admin } = useAuth()
     return (
         <>
 
@@ -28,13 +28,14 @@ const Header = () => {
                                 <Nav.Link>
                                     <Link className="text-navabr" >Contact Us</Link>
                                 </Nav.Link>
-                                <Nav.Link>
-                                    <Link to="/register" className="text-navabr" >SignUp</Link>
-                                </Nav.Link>
+
+                                {admin && <Nav.Link>
+                                    <Link to="/admin" className="text-navabr" >Admin</Link>
+                                </Nav.Link>}
 
                                 {user?.email ?
 
-                                    <Button className="nav-button" onClick={logOut} variant="outline-secondary">LogOut</Button>
+                                    <Button className="nav-button" onClick={logOut} variant="outline-secondary">LogOut {user.displayName}</Button>
 
 
                                     :
