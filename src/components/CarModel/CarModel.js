@@ -4,12 +4,12 @@ import { Icon } from '@iconify/react';
 import advertiseVertical from '../../../src/images/advertise0.jpg'
 import useCarModel from '../../hooks/useCarModel';
 import { useParams } from 'react-router';
-const CarModel = ({ allCarData }) => {
+const CarModel = () => {
     const [carlist] = useCarModel()
     const makeList = carlist.map(car => car.Make)
     const [companyData, setCompanyData] = useState([])
     const { id, carmodel } = useParams();
-    console.log(allCarData)
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/carlist/${id}/${carmodel}`)

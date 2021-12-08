@@ -12,7 +12,7 @@ const Admin = () => {
 
 
     }
-    //send review data to the DB
+    //send  data to the DB
     const dataSubmit = e => {
         const newDataInfo = { ...dataInfo }
 
