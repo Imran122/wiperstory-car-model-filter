@@ -77,7 +77,7 @@ const useFirebase = () => {
         fetch(`http://localhost:5000/users/${user.email}`)
             .then(response => response.json())
             .then(data => setAdmin(data.admin))
-        console.log('firebase hooks', admin)
+
     }, [user.email])
 
     const logOut = () => {

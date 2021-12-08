@@ -1,6 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import useCarModel from '../../../hooks/useCarModel';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import './CarForm.css'
 const CarForm = () => {
+    const history = useHistory()
+    const [carlist] = useCarModel()
+    const [allCarData, setAllCarData] = useState([])
+    //console.log(carlist)
+    const [selectData, setSelectData] = useState('')
+    const handleOnBlur = (e) => {
+
+        const field = e.target.name;
+        const value = e.target.value;
+        const newSelectData = { ...selectData };
+        newSelectData[field] = value;
+
+        setSelectData(newSelectData);
+        e.preventDefault();
+
+    }
+
+
+
+    //  console.log(selectData);
+    //dependent option work
+    //dependent car model code
+
+    let particularMake = selectData.make;
+    //console.log('particular make', particularMake)
+    const dependentModelData = carlist.filter(list => particularMake === list.Make)
+    console.log('dependentModelData valeu', dependentModelData)
+    //send data to the next pages
+    useEffect(() => {
+        setAllCarData(dependentModelData)
+    }, [])
+    const nextPage = () => {
+
+        history.push(`/make`)
+
+    }
+
+    const handleDataSubmit = (e) => {
+        console.log("handel submit", dependentModelData)
+        e.preventDefault();
+    }
+
+
+
     return (
         <div>
             <section className="call-action">
@@ -16,38 +62,50 @@ const CarForm = () => {
                                                 <div className="form-items text-center">
                                                     <h2>Welcome to size my wipers!</h2>
                                                     <p>To get started, choose a make and model of vehicle..</p>
-                                                    <form className="requires-validation">
+                                                    <form onSubmit={handleDataSubmit} className="requires-validation">
 
 
                                                         <h5>Make and Model</h5>
                                                         <div className="col-md-12">
-                                                            <select className="form-select mt-3" required>
+                                                            <select onChange={handleOnBlur} name="make" className="form-select mt-3" required>
+                                                                <option selected disabled value="">Make</option>
+                                                                {
+                                                                    carlist.map(car =>
+                                                                        <option key={car._id} value={car.Make}>{car.Make}</option>
+                                                                    )
+                                                                }
 
-                                                                <option value="jweb">Junior Web Developer</option>
-                                                                <option value="sweb">Senior Web Developer</option>
-                                                                <option value="pmanager">Project Manager</option>
+
                                                             </select>
 
                                                         </div>
+
                                                         <div className="col-md-12">
-                                                            <select className="form-select mt-3" required>
+                                                            <select onChange={handleOnBlur} name="model" className="form-select mt-3" required>
+                                                                <option selected disabled value="">Model</option>
+                                                                {
+                                                                    dependentModelData.map(modelData =>
 
-                                                                <option value="jweb">Junior Web Developer</option>
-                                                                <option value="sweb">Senior Web Developer</option>
-                                                                <option value="pmanager">Project Manager</option>
-                                                            </select>
+                                                                        <option key={modelData._id} value={modelData.Model}>{modelData.Model}</option>
+                                                                    )
+                                                                }
 
-                                                        </div>
-                                                        <div className="col-md-12">
-                                                            <select className="form-select mt-3" required>
-                                                                {/*  <option selected disabled value="">Position</option> */}
-                                                                <option value="jweb">Junior Web Developer</option>
-                                                                <option value="sweb">Senior Web Developer</option>
-                                                                <option value="pmanager">Project Manager</option>
                                                             </select>
 
                                                         </div>
 
+                                                        {/*    <div className="col-md-12">
+                                                            <select onChange={handleOnBlur} name="year" className="form-select mt-3" >
+                                                                <option selected disabled value="">Year</option>
+                                                                {
+                                                                    dependentModelData.map(car =>
+                                                                        <option key={car._id} value={car.Year}>{car.Year}</option>
+                                                                    )
+                                                                }
+
+                                                            </select>
+
+                                                        </div> */}
 
 
 
@@ -56,7 +114,7 @@ const CarForm = () => {
 
 
                                                         <div className="form-button mt-3">
-                                                            <button id="submit" type="submit" className="btn btn-primary">SHOW NAME</button>
+                                                            <button id="submit" type="submit" className="btn btn-primary">SHOW {particularMake}</button>
                                                         </div>
                                                     </form>
                                                 </div>

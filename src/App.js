@@ -18,6 +18,7 @@ import Admin from './components/Admin/Admin';
 import PrivateRoute from './components/Authentication/PrivateRoute/PrivateRoute';
 import AdminRoute from './components/Authentication/AdminRoute/AdminRoute';
 import MakeAdmin from './components/MakeAdmin/MakeAdmin';
+import Company from './components/Company/Company';
 
 function App() {
 
@@ -34,8 +35,11 @@ function App() {
             <Route exact path="/home">
               <Home></Home>
             </Route>
-            <Route path="/make">
+            <Route exact path="/make">
               <Make></Make>
+            </Route>
+            <Route exact path="/make/:id">
+              <Company></Company>
             </Route>
 
 

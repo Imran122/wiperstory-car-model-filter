@@ -2,7 +2,26 @@ import React from 'react';
 import './Make.css'
 import advertiseVertical from '../../../src/images/advertise0.jpg'
 import { Icon } from '@iconify/react';
+import useCarModel from '../../hooks/useCarModel';
+import { Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 const Make = () => {
+    const [carlist] = useCarModel()
+
+    const makeList = carlist.map(car => car.Make)
+
+
+    //unique list is here
+    var uniqueList = makeList.filter(function (item, pos) {
+        return makeList.indexOf(item) === pos;
+    });
+
+    const col1 = uniqueList.slice(0, 30)
+    const col2 = uniqueList.slice(30, 60)
+    const col3 = uniqueList.slice(60, 90)
+    const col4 = uniqueList.slice(90, 120)
+
+
     return (
         <>
             <header className="ex-header">
@@ -11,8 +30,8 @@ const Make = () => {
                         <div className="col-xl-10 offset-xl-1">
                             <h5 className="ex-header-text">
                                 WiperStory <Icon icon="ion:chevron-forward-sharp" />
-                                By Make <Icon icon="ion:chevron-forward-sharp" />
-                                model name <Icon icon="ion:chevron-forward-sharp" />
+                                Make <Icon icon="ion:chevron-forward-sharp" />
+
 
 
                             </h5>
@@ -23,50 +42,55 @@ const Make = () => {
             <div className="ex-basic-1 pt-4">
                 <div className="container ">
                     <div className="row justify-content-md-center">
+
+
                         <div className="col-xl-9 ">
 
-                            <table className="customer-table">
 
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Phone</th>
-                                    </tr>
-                                </thead>
+                            <div class="d-flex justify-content-evenly">
 
-                                <tbody>
-                                    <tr>
-                                        <th>Joann Hayes</th>
-                                        <td>joann.hayes@example.com</td>
-                                        <td>(867)-246-3097</td>
-                                        <td>(867)-246-3097</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Cassandra Hart</th>
-                                        <td>cassandra.hart@example.com</td>
-                                        <td>(768)-258-3934</td>
-                                        <td>(768)-258-3934</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Thomas Willis</th>
-                                        <td>thomas.willis@example.com</td>
-                                        <td>(405)-864-3173</td>
-                                        <td>(405)-864-3173</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Daryl Moore</th>
-                                        <td>daryl.moore@example.com</td>
-                                        <td>(819)-432-0779</td>
-                                        <td>(819)-432-0779</td>
-                                    </tr>
+                                <div>
+                                    {col1.map(car =>
+                                        <ul className="text-dark">
+                                            <li className="text-dark">{car}</li>
 
-                                </tbody>
-                            </table>
+                                        </ul>
+                                    )
 
+                                    }
+                                </div>
+                                <div>
+                                    {col2.map(car =>
+                                        <ul className="text-dark">
+                                            <li className="text-dark">{car}</li>
 
+                                        </ul>
+                                    )
 
+                                    }
+                                </div>
+                                <div>
+                                    {col3.map(car =>
+                                        <ul className="text-dark">
+                                            <li className="text-dark">{car}</li>
+
+                                        </ul>
+                                    )
+
+                                    }
+                                </div>
+                                <div>
+                                    {col4.map(car =>
+                                        <ul className="text-dark">
+                                            <li className="text-dark">{car}</li>
+
+                                        </ul>
+                                    )
+
+                                    }
+                                </div>
+
+                            </div>
 
                         </div>
 
