@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useCarModel from '../../../hooks/useCarModel';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import './CarForm.css'
+import { useParams } from 'react-router';
 const CarForm = () => {
     const history = useHistory()
     const [carlist] = useCarModel()
@@ -29,19 +30,25 @@ const CarForm = () => {
     let particularMake = selectData.make;
     //console.log('particular make', particularMake)
     const dependentModelData = carlist.filter(list => particularMake === list.Make)
-    console.log('dependentModelData valeu', dependentModelData)
+
     //send data to the next pages
+
+    const { id, carmodel } = useParams();
+
+    //calling api and send the data to the carmodel compoennt pages
     useEffect(() => {
-        setAllCarData(dependentModelData)
+        fetch(`http://localhost:5000/carlist/${selectData.make}/${selectData.model}`)
+            .then(response => response.json())
+            .then(data => setAllCarData(data))
     }, [])
     const nextPage = () => {
 
-        history.push(`/make`)
+        history.push(`make/${selectData.make}/${selectData.model}`)
 
     }
 
     const handleDataSubmit = (e) => {
-        console.log("handel submit", dependentModelData)
+
         e.preventDefault();
     }
 
@@ -82,11 +89,15 @@ const CarForm = () => {
 
                                                         <div className="col-md-12">
                                                             <select onChange={handleOnBlur} name="model" className="form-select mt-3" required>
-                                                                <option selected disabled value="">Model</option>
+
                                                                 {
                                                                     dependentModelData.map(modelData =>
 
-                                                                        <option key={modelData._id} value={modelData.Model}>{modelData.Model}</option>
+                                                                        <option key={modelData._id} value={modelData.Model} required>
+
+                                                                            {modelData.Model}
+
+                                                                        </option>
                                                                     )
                                                                 }
 
@@ -114,7 +125,7 @@ const CarForm = () => {
 
 
                                                         <div className="form-button mt-3">
-                                                            <button id="submit" type="submit" className="btn btn-primary">SHOW {particularMake}</button>
+                                                            <button onClick={nextPage} allCarData={allCarData} id="submit" type="submit" className="btn btn-primary">SHOW {particularMake}</button>
                                                         </div>
                                                     </form>
                                                 </div>

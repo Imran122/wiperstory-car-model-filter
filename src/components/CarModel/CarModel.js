@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import './Company.css'
+import './CarModel.css'
 import { Icon } from '@iconify/react';
 import advertiseVertical from '../../../src/images/advertise0.jpg'
 import useCarModel from '../../hooks/useCarModel';
 import { useParams } from 'react-router';
-const Company = () => {
+const CarModel = ({ allCarData }) => {
     const [carlist] = useCarModel()
     const makeList = carlist.map(car => car.Make)
     const [companyData, setCompanyData] = useState([])
-    const { id } = useParams();
-
+    const { id, carmodel } = useParams();
+    console.log(allCarData)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/carlist/${id}`)
+        fetch(`http://localhost:5000/carlist/${id}/${carmodel}`)
             .then(response => response.json())
             .then(data => setCompanyData(data))
     }, [])
@@ -25,8 +25,8 @@ const Company = () => {
                         <div className="col-xl-10 offset-xl-1">
                             <h5 className="ex-header-text">
                                 WiperStory <Icon icon="ion:chevron-forward-sharp" />
-                                By Make <Icon icon="ion:chevron-forward-sharp" />
                                 {id} <Icon icon="ion:chevron-forward-sharp" />
+                                {carmodel} <Icon icon="ion:chevron-forward-sharp" />
 
 
                             </h5>
@@ -40,22 +40,42 @@ const Company = () => {
                     <div className="row justify-content-md-center">
                         <div className="col-xl-9 ">
 
-                            <div class="items">
-                                {companyData.map(company =>
-                                    <div class="item">
+                            <table className="customer-table">
+
+                                <thead>
+                                    <tr>
+                                        <th>Year</th>
+                                        <th>Driver</th>
+                                        <th>Passenger Side</th>
+                                        <th>Rear</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    {companyData.map(company =>
+                                        <tr>
+                                            <th>{company.Year}</th>
+                                            <td>{company.Driver}</td>
+                                            <td>{company.Pass}</td>
+                                            <td>{company.Rear}</td>
+
+                                        </tr>
+                                    )}
 
 
-                                        <h5><Icon icon="ph:arrow-fat-lines-right-fill" /> {company.Model}</h5>
 
 
-                                    </div>
-                                )}
-                            </div>
+
+                                </tbody>
+                            </table>
 
 
 
 
                         </div>
+
+
                         <div className="col-xl-3 text-center">
                             <img className="mx-auto" src={advertiseVertical} alt="" />
 
@@ -67,6 +87,7 @@ const Company = () => {
             </div>
         </>
     );
+
 };
 
-export default Company;
+export default CarModel;

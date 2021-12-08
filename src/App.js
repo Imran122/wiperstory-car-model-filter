@@ -19,6 +19,7 @@ import PrivateRoute from './components/Authentication/PrivateRoute/PrivateRoute'
 import AdminRoute from './components/Authentication/AdminRoute/AdminRoute';
 import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 import Company from './components/Company/Company';
+import CarModel from './components/CarModel/CarModel';
 
 function App() {
 
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route exact path="/make/:id">
               <Company></Company>
+            </Route>
+            <Route exact path="/make/:id/:carmodel">
+              <CarModel></CarModel>
             </Route>
 
 
