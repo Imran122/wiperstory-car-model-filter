@@ -15,41 +15,50 @@ const CarForm = () => {
         const value = e.target.value;
         const newSelectData = { ...selectData };
         newSelectData[field] = value;
-
+        console.log(newSelectData)
         setSelectData(newSelectData);
         e.preventDefault();
 
     }
 
 
+    //unique array list making list is here
 
-    //  console.log(selectData);
+    let uniqueList = [...new Map(carlist.map((item) => [item["Make"], item])).values()];
+
+
+    //console.log('uniq', uniqueList);
     //dependent option work
     //dependent car model code
 
     let particularMake = selectData.make;
     //console.log('particular make', particularMake)
     const dependentModelData = carlist.filter(list => particularMake === list.Make)
+    // console.log("dependent model data", dependentModelData)
 
-    //send data to the next pages
 
-    const { id, carmodel } = useParams();
 
-    //calling api and send the data to the carmodel compoennt pages
-    useEffect(() => {
-        fetch(`http://localhost:5000/carlist/${selectData.make}/${selectData.model}`)
-            .then(response => response.json())
-            .then(data => setAllCarData(data))
-    }, [])
+
+
+    //uniqe list is using for make dropdown
+    var uniqemakedata = carlist.find(obj => obj.Make === selectData.make)
+
+
+    //console.log("my uniqe make data", uniqemakedata)
+    //finind the exact model slug from db
+    var uniqemodeldata = carlist.find(obj => obj.Model === selectData.model)
+    //console.log("my uniqe model data", uniqemodeldata)
+
     const nextPage = () => {
 
-        history.push(`make/${selectData.make}/${selectData.model}`)
+        history.push(`make/${uniqemakedata.Slugmake}/${uniqemodeldata.Slugmodel}`)
 
     }
 
     const handleDataSubmit = (e) => {
 
         e.preventDefault();
+
     }
 
 
@@ -74,11 +83,11 @@ const CarForm = () => {
 
                                                         <h5>Make and Model</h5>
                                                         <div className="col-md-12">
-                                                            <select onChange={handleOnBlur} name="make" className="form-select mt-3" required>
-                                                                <option selected disabled value="">Make</option>
+                                                            <select onChange={handleOnBlur} name="make" className="form-select mt-3 text-dark" required>
+                                                                <option selected value="">Make</option>
                                                                 {
                                                                     carlist.map(car =>
-                                                                        <option key={car._id} value={car.Make}>{car.Make}</option>
+                                                                        <option key={car._id} value={car.Make}>{car.Make} {car.Year}</option>
                                                                     )
                                                                 }
 
@@ -89,7 +98,7 @@ const CarForm = () => {
 
                                                         <div className="col-md-12">
                                                             <select onChange={handleOnBlur} name="model" className="form-select mt-3" required>
-
+                                                                <option selected value="">Model</option>
                                                                 {
                                                                     dependentModelData.map(modelData =>
 
@@ -125,7 +134,7 @@ const CarForm = () => {
 
 
                                                         <div className="form-button mt-3">
-                                                            <button onClick={nextPage} allCarData={allCarData} id="submit" type="submit" className="btn btn-primary">SHOW {particularMake}</button>
+                                                            <button onClick={nextPage} id="submit" type="submit" className="btn btn-primary">SHOW {particularMake}</button>
                                                         </div>
                                                     </form>
                                                 </div>

@@ -4,7 +4,8 @@ import advertiseVertical from '../../../src/images/advertise0.jpg'
 import { Icon } from '@iconify/react';
 import useCarModel from '../../hooks/useCarModel';
 import { Col, Container, ListGroup, Row } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router';
 const Make = () => {
     const [carlist] = useCarModel()
 
@@ -12,16 +13,22 @@ const Make = () => {
 
 
     //unique list is here
-    var uniqueList = makeList.filter(function (item, pos) {
-        return makeList.indexOf(item) === pos;
-    });
+    let uniqueList = [...new Map(carlist.map((item) => [item["Make"], item])).values()];
 
-    const col1 = uniqueList.slice(0, 30)
-    const col2 = uniqueList.slice(30, 60)
-    const col3 = uniqueList.slice(60, 90)
-    const col4 = uniqueList.slice(90, 120)
+    console.log('make page', uniqueList.Slugmake)
+    /*     const col1 = uniqueList.slice(0, 30)
+        const col2 = uniqueList.slice(30, 60)
+        const col3 = uniqueList.slice(60, 90)
+        const col4 = uniqueList.slice(90, 120) */
 
+    //hyper linking  or dynamic link with company  make name
+    const history = useHistory()
+    const { id } = useParams();
+    const nextPage = () => {
 
+        history.push(`http://localhost:5000/carlist/${id}`)
+
+    }
     return (
         <>
             <header className="ex-header">
@@ -42,59 +49,24 @@ const Make = () => {
             <div className="ex-basic-1 pt-4">
                 <div className="container ">
                     <div className="row justify-content-md-center">
-
-
                         <div className="col-xl-9 ">
 
+                            <div class="items">
+                                {uniqueList.map(company =>
+                                    <div class="item">
 
-                            <div class="d-flex justify-content-evenly">
 
-                                <div>
-                                    {col1.map(car =>
-                                        <ul className="text-dark">
-                                            <li className="text-dark">{car}</li>
+                                        <h5><Icon icon="ph:arrow-fat-lines-right-fill" /> {company.Make}</h5>
 
-                                        </ul>
-                                    )
 
-                                    }
-                                </div>
-                                <div>
-                                    {col2.map(car =>
-                                        <ul className="text-dark">
-                                            <li className="text-dark">{car}</li>
-
-                                        </ul>
-                                    )
-
-                                    }
-                                </div>
-                                <div>
-                                    {col3.map(car =>
-                                        <ul className="text-dark">
-                                            <li className="text-dark">{car}</li>
-
-                                        </ul>
-                                    )
-
-                                    }
-                                </div>
-                                <div>
-                                    {col4.map(car =>
-                                        <ul className="text-dark">
-                                            <li className="text-dark">{car}</li>
-
-                                        </ul>
-                                    )
-
-                                    }
-                                </div>
-
+                                    </div>
+                                )}
                             </div>
 
+
+
+
                         </div>
-
-
                         <div className="col-xl-3 text-center">
                             <img className="mx-auto" src={advertiseVertical} alt="" />
 
@@ -104,7 +76,6 @@ const Make = () => {
                     </div>
                 </div>
             </div>
-
 
 
 
