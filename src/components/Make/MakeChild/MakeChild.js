@@ -14,7 +14,7 @@ const MakeChild = (props) => {
 
     const nextPage = () => {
 
-        history.push(`make/${Slugmake}`)
+        history.push(`/make/${Slugmake}`)
 
     }
     return (

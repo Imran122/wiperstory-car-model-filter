@@ -4,7 +4,11 @@ import { Icon } from '@iconify/react';
 import advertiseVertical from '../../../src/images/advertise0.jpg'
 import useCarModel from '../../hooks/useCarModel';
 import { useParams } from 'react-router';
+import CompanyChild from './CompanyChild/CompanyChild';
 const Company = () => {
+
+    //this is the model show components
+
     const [carlist] = useCarModel()
     const makeList = carlist.map(car => car.Make)
     const [companyData, setCompanyData] = useState([])
@@ -42,13 +46,12 @@ const Company = () => {
 
                             <div class="items">
                                 {companyData.map(company =>
-                                    <div class="item">
+                                    <CompanyChild
+                                        key={company._id}
+                                        company={company}
+                                    >
 
-
-                                        <h5><Icon icon="ph:arrow-fat-lines-right-fill" /> {company.Model}</h5>
-
-
-                                    </div>
+                                    </CompanyChild>
                                 )}
                             </div>
 
