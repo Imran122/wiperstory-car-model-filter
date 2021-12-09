@@ -26,7 +26,7 @@ const Header = () => {
                                     <Link className="text-navabr" to="/make" >Car Make</Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link className="text-navabr" >Contact Us</Link>
+                                    <Link to="/contact" className="text-navabr" >Contact Us</Link>
                                 </Nav.Link>
 
                                 {admin && <Nav.Link>

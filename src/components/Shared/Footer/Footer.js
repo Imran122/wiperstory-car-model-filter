@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css'
 import logo from '../../../images/logo/logo.png'
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div>
@@ -23,8 +24,8 @@ const Footer = () => {
                         <div className="border1"></div>
                         <ul>
                             <a href="#"><li>Home</li></a>
-                            <a href="#"><li>Search</li></a>
-                            <a href="#"><li>Contact</li></a>
+                            <Link to="/privacy"><a href="#"><li>Prrivacy & Policy</li></a></Link>
+                            <a href="#"><li>Contact Us</li></a>
                             <a href="#"><li>About</li></a>
                         </ul>
                     </div>

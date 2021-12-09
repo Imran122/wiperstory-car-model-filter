@@ -21,6 +21,8 @@ import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 import Company from './components/Company/Company';
 import CarModel from './components/CarModel/CarModel';
 import NotFound from './components/NotFound/NotFound';
+import ContactUs from './components/ContactUs/ContactUs';
+import Privacy from './components/Privacy/Privacy';
 
 function App() {
 
@@ -61,6 +63,12 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/contact">
+              <ContactUs></ContactUs>
+            </Route>
+            <Route path="/privacy">
+              <Privacy></Privacy>
             </Route>
 
             <Route exact path="*">
