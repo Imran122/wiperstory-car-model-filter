@@ -49,6 +49,7 @@ const Make = () => {
                             <div class="items">
                                 {uniqueList.map(company =>
                                     <MakeChild
+                                        key={company._id}
                                         company={company}
                                     >
 

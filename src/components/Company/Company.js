@@ -28,9 +28,9 @@ const Company = () => {
                     <div className="row">
                         <div className="col-xl-10 offset-xl-1">
                             <h5 className="ex-header-text">
-                                WiperStory <Icon icon="ion:chevron-forward-sharp" />
-                                By Make <Icon icon="ion:chevron-forward-sharp" />
-                                {id} <Icon icon="ion:chevron-forward-sharp" />
+                                WIPER STORY <Icon icon="ion:chevron-forward-sharp" />
+                                MAKE <Icon icon="ion:chevron-forward-sharp" />
+                                {id.toUpperCase()} <Icon icon="ion:chevron-forward-sharp" />
 
 
                             </h5>
@@ -43,7 +43,7 @@ const Company = () => {
                 <div className="container ">
                     <div className="row justify-content-md-center">
                         <div className="col-xl-9 ">
-
+                            <h2 className="text-center mt-3 text-uppercase">Choose a {id.toUpperCase()} Model CAR</h2>
                             <div class="items">
                                 {companyData.map(company =>
                                     <CompanyChild

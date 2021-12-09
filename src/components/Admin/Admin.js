@@ -50,11 +50,11 @@ const Admin = () => {
                             <form onSubmit={dataSubmit}>
                                 <p>
                                     <label>Make Name<span>*</span></label>
-                                    <input onBlur={handleOnBlur} type="text" name="Make" placeholder="type Make Name" required />
+                                    <input onBlur={handleOnBlur} type="text" name="Make" placeholder="type Make Name, ex: Ex Corola" required />
                                 </p>
                                 <p>
                                     <label>Model Name<span>*</span></label>
-                                    <input onBlur={handleOnBlur} type="text" name="Model" placeholder="type Model" required />
+                                    <input onBlur={handleOnBlur} type="text" name="Model" placeholder="type Model, ex: Md-2" required />
                                 </p>
                                 <p>
                                     <label>Year<span>*</span></label>
@@ -75,6 +75,14 @@ const Admin = () => {
                                 <p>
                                     <label>Rear<span>*</span></label>
                                     <input onBlur={handleOnBlur} type="text" name="Rear" placeholder="type Rear" required />
+                                </p>
+                                <p>
+                                    <label>Slug Make<span>*</span></label>
+                                    <input onBlur={handleOnBlur} type="text" name="Slugmake" placeholder="type Slugmake,ex: acura" required />
+                                </p>
+                                <p>
+                                    <label>Slug Model<span>*</span></label>
+                                    <input onBlur={handleOnBlur} type="text" name="Slugmodel" placeholder="type Slugmodel, ex:mdx" required />
                                 </p>
                                 <p>
                                     <input type="submit" value="Submit" />
