@@ -27,14 +27,15 @@ const CarForm = () => {
     let uniqueList = [...new Map(carlist.map((item) => [item["Make"], item])).values()];
 
 
-    //console.log('uniq', uniqueList);
+    console.log('uniq', uniqueList);
     //dependent option work
     //dependent car model code
 
     let particularMake = selectData.make;
     //console.log('particular make', particularMake)
     const dependentModelData = carlist.filter(list => particularMake === list.Make)
-    // console.log("dependent model data", dependentModelData)
+
+    console.log("dependent model data", dependentModelData)
 
 
 
@@ -86,7 +87,7 @@ const CarForm = () => {
                                                             <select onChange={handleOnBlur} name="make" className="form-select mt-3 text-dark" required>
                                                                 <option selected value="">Make</option>
                                                                 {
-                                                                    carlist.map(car =>
+                                                                    uniqueList.map(car =>
                                                                         <option key={car._id} value={car.Make}>{car.Make} {car.Year}</option>
                                                                     )
                                                                 }
