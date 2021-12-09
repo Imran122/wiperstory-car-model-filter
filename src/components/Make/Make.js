@@ -6,6 +6,7 @@ import useCarModel from '../../hooks/useCarModel';
 import { Col, Container, ListGroup, Row } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useParams } from 'react-router';
+import MakeChild from './MakeChild/MakeChild';
 const Make = () => {
     const [carlist] = useCarModel()
 
@@ -22,13 +23,7 @@ const Make = () => {
         const col4 = uniqueList.slice(90, 120) */
 
     //hyper linking  or dynamic link with company  make name
-    const history = useHistory()
-    const { id } = useParams();
-    const nextPage = () => {
 
-        history.push(`http://localhost:5000/carlist/${id}`)
-
-    }
     return (
         <>
             <header className="ex-header">
@@ -53,13 +48,11 @@ const Make = () => {
 
                             <div class="items">
                                 {uniqueList.map(company =>
-                                    <div class="item">
+                                    <MakeChild
+                                        company={company}
+                                    >
 
-
-                                        <h5><Icon icon="ph:arrow-fat-lines-right-fill" /> {company.Make}</h5>
-
-
-                                    </div>
+                                    </MakeChild>
                                 )}
                             </div>
 
