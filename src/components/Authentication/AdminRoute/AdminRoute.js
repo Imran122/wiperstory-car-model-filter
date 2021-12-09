@@ -19,8 +19,8 @@ const AdminRoute = ({ children, ...rest }) => {
     const { user, isLoading, admin } = useAuth()
 
     if (isLoading) {
-        return <div class="spinner-main">
-            <div class="loader-circle"></div>
+        return <div className="spinner-main">
+            <div className="loader-circle"></div>
         </div>
     }
     return (

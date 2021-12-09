@@ -5,6 +5,7 @@ import advertiseVertical from '../../../src/images/advertise0.jpg'
 import useCarModel from '../../hooks/useCarModel';
 import { useParams } from 'react-router';
 import CompanyChild from './CompanyChild/CompanyChild';
+import { Button } from 'react-bootstrap';
 const Company = () => {
 
     //this is the model show components
@@ -68,6 +69,38 @@ const Company = () => {
                     </div>
                 </div>
             </div>
+
+
+            {/* car data show start */}
+            <h5 className="text-center mt-3 text-uppercase">List of  {id.toUpperCase()} CAR with year</h5>
+            <div className="ex-basic-1 pt-4">
+                <div className="container ">
+                    <div className="row justify-content-md-center">
+                        <div className="col-md-12 ">
+
+                            <div class="items">
+                                {companyData.map(allcar =>
+                                    <div className="item" key={allcar._id}>
+
+
+                                        <p className=" text-dark h-5" variant="outline-secondary"><Icon icon="ph:arrow-fat-lines-right-fill" /> {allcar.Car}</p>
+
+
+                                    </div>
+                                )
+                                }
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {/*  car data show end */}
         </>
     );
 };

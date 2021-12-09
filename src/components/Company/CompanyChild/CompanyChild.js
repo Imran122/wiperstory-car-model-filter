@@ -12,7 +12,7 @@ const CompanyChild = (props) => {
     }
     return (
         <>
-            <div class="item">
+            <div className="item">
 
 
                 <Button className="btn-make-name text-dark" onClick={nextPage} variant="outline-secondary"><Icon icon="ph:arrow-fat-lines-right-fill" /> {Model}</Button>

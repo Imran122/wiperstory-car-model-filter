@@ -20,6 +20,7 @@ import AdminRoute from './components/Authentication/AdminRoute/AdminRoute';
 import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 import Company from './components/Company/Company';
 import CarModel from './components/CarModel/CarModel';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
 
@@ -60,6 +61,10 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+
+            <Route exact path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>
