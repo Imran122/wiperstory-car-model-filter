@@ -88,7 +88,7 @@ const CarForm = () => {
                                                                 <option selected value="">Make</option>
                                                                 {
                                                                     uniqueList.map(car =>
-                                                                        <option key={car._id} value={car.Make}>{car.Make} {car.Year}</option>
+                                                                        <option key={car._id} value={car.Make}>{car.Make} </option>
                                                                     )
                                                                 }
 
