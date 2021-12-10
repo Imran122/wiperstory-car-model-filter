@@ -65,6 +65,7 @@ const CarModel = () => {
                                         <th>Driver Side</th>
                                         <th>Passenger Side</th>
                                         <th>Rear</th>
+
                                     </tr>
                                 </thead>
 
@@ -75,7 +76,11 @@ const CarModel = () => {
                                             <th>{company.Year}</th>
                                             <td>{company.Driver}"</td>
                                             <td>{company.Pass}"</td>
-                                            <td>{company.Rear}"</td>
+                                            {company.Rear &&
+                                                <td>{company.Rear}"</td>
+                                            }
+
+
 
                                         </tr>
                                     )}
