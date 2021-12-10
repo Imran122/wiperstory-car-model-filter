@@ -33,7 +33,7 @@ const Company = () => {
                     },
                     {
                         name: `og:description`,
-                        content: `make/${id}`,
+                        content: ` View the ${id} undefined Wiper Size Chart right here. We have the best wiper size information available for all models.`,
                     },
                 ]}
             />

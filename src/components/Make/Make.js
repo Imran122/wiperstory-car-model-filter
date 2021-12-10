@@ -31,7 +31,7 @@ const Make = () => {
                 <title>make</title>
                 <meta name="description" content="make" />
                 <meta property="og:title" content="make" />
-                <meta property="og:description" content="make" />
+                <meta property="og:description" content="its a demo description.by someone" />
             </Helmet>
 
 

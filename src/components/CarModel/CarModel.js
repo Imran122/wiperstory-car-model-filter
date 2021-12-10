@@ -31,7 +31,7 @@ const CarModel = () => {
                     },
                     {
                         name: `og:description`,
-                        content: `make/${id}/${carmodel}`,
+                        content: ` View the ${id} ${carmodel} undefined Wiper Size Chart right here. We have the best wiper size information available for all models.`,
                     },
                 ]}
             />
