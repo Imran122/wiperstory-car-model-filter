@@ -5,7 +5,7 @@ import advertiseVertical from '../../../src/images/advertise0.jpg'
 import useCarModel from '../../hooks/useCarModel';
 import { useParams } from 'react-router';
 import CompanyChild from './CompanyChild/CompanyChild';
-import { Button } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 const Company = () => {
 
     //this is the model show components
@@ -24,6 +24,20 @@ const Company = () => {
 
     return (
         <>
+            <Helmet title={`make/${id}`}
+                htmlAttributes={{ lang: "en" }}
+                meta={[
+                    {
+                        name: `og:title`,
+                        content: `make/${id}`,
+                    },
+                    {
+                        name: `og:description`,
+                        content: `make/${id}`,
+                    },
+                ]}
+            />
+
             <header className="ex-header">
                 <div className="container">
                     <div className="row">

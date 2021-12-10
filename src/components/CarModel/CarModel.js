@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import advertiseVertical from '../../../src/images/advertise0.jpg'
 import useCarModel from '../../hooks/useCarModel';
 import { useParams } from 'react-router';
-
+import { Helmet } from 'react-helmet';
 const CarModel = () => {
     const [carlist] = useCarModel()
     const makeList = carlist.map(car => car.Car)
@@ -22,6 +22,19 @@ const CarModel = () => {
 
     return (
         <>
+            <Helmet title={`make/${id}/${carmodel}`}
+                htmlAttributes={{ lang: "en" }}
+                meta={[
+                    {
+                        name: `og:title`,
+                        content: `make/${id}/${carmodel}`,
+                    },
+                    {
+                        name: `og:description`,
+                        content: `make/${id}/${carmodel}`,
+                    },
+                ]}
+            />
             <header className="ex-header">
                 <div className="container">
                     <div className="row">

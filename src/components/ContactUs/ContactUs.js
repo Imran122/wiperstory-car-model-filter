@@ -1,9 +1,15 @@
 import React from 'react';
 import './ContactUs.css'
-
+import { Helmet } from 'react-helmet';
 const ContactUs = () => {
     return (
-        <div>
+        <>
+            <Helmet>‍
+                <title>Contact</title>
+                <meta name="description" content="contact us" />
+                <meta property="og:title" content="contact us" />
+                <meta property="og:description" content="contact us" />
+            </Helmet>
             <div>
 
                 <div className="container">
@@ -67,7 +73,7 @@ const ContactUs = () => {
             </div>
 
 
-        </div>
+        </>
     );
 };
 

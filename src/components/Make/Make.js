@@ -7,6 +7,7 @@ import { Col, Container, ListGroup, Row } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useParams } from 'react-router';
 import MakeChild from './MakeChild/MakeChild';
+import { Helmet } from 'react-helmet';
 const Make = () => {
     const [carlist] = useCarModel()
 
@@ -26,6 +27,14 @@ const Make = () => {
 
     return (
         <>
+            <Helmet>‍
+                <title>make</title>
+                <meta name="description" content="make" />
+                <meta property="og:title" content="make" />
+                <meta property="og:description" content="make" />
+            </Helmet>
+
+
             <header className="ex-header">
                 <div className="container">
                     <div className="row">
