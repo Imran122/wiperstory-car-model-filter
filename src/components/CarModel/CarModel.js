@@ -5,6 +5,7 @@ import advertiseVertical from '../../../src/images/advertise0.jpg'
 import useCarModel from '../../hooks/useCarModel';
 import { useParams } from 'react-router';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 const CarModel = () => {
     const [carlist] = useCarModel()
     const makeList = carlist.map(car => car.Car)
@@ -40,8 +41,9 @@ const CarModel = () => {
                     <div className="row">
                         <div className="col-xl-10 offset-xl-1">
                             <h5 className="ex-header-text">
-                                WiperStory <Icon icon="ion:chevron-forward-sharp" />
-                                {id.toUpperCase()} <Icon icon="ion:chevron-forward-sharp" />
+                                <Link className="text-light text-decoration-none" to="/home"> WIPER STORY <Icon icon="ion:chevron-forward-sharp" /></Link>
+                                <Link className="text-light text-decoration-none" to={`/make/${id}`}> {id.toUpperCase()} <Icon icon="ion:chevron-forward-sharp" /></Link>
+
                                 {carmodel.toUpperCase()} <Icon icon="ion:chevron-forward-sharp" />
 
 

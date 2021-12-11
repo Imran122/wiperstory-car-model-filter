@@ -73,7 +73,7 @@ const useFirebase = () => {
     //using useEffect to check and call api for checking user is admin or not
 
     useEffect(() => {
-        console.log(user.email)
+
         fetch(`http://localhost:5000/users/${user.email}`)
             .then(response => response.json())
             .then(data => setAdmin(data.admin))

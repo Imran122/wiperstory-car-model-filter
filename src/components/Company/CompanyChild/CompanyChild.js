@@ -10,6 +10,8 @@ const CompanyChild = (props) => {
         history.push(`/make/${Slugmake}/${Slugmodel}`)
 
     }
+    console.log(Model)
+
     return (
         <>
             <div className="item">
