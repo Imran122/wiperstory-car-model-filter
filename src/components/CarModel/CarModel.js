@@ -41,7 +41,8 @@ const CarModel = () => {
                     <div className="row">
                         <div className="col-xl-10 offset-xl-1">
                             <h5 className="ex-header-text">
-                                <Link className="text-light text-decoration-none" to="/home"> WIPER STORY <Icon icon="ion:chevron-forward-sharp" /></Link>
+                                <Link className="text-light text-decoration-none" to="/home"> HOME<Icon icon="ion:chevron-forward-sharp" /></Link>
+                                <Link className="text-light text-decoration-none" to="/make">MAKE <Icon icon="ion:chevron-forward-sharp" /></Link>
                                 <Link className="text-light text-decoration-none" to={`/make/${id}`}> {id.toUpperCase()} <Icon icon="ion:chevron-forward-sharp" /></Link>
 
                                 {carmodel.toUpperCase()} <Icon icon="ion:chevron-forward-sharp" />

@@ -40,8 +40,8 @@ const Make = () => {
                     <div className="row">
                         <div className="col-xl-10 offset-xl-1">
                             <h5 className="ex-header-text">
-                                WiperStory <Icon icon="ion:chevron-forward-sharp" />
-                                Make <Icon icon="ion:chevron-forward-sharp" />
+                                HOME<Icon icon="ion:chevron-forward-sharp" />
+                                MAKE <Icon icon="ion:chevron-forward-sharp" />
 
 
 
