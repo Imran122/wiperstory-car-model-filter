@@ -23,7 +23,7 @@ const CarModel = () => {
 
     return (
         <>
-            <Helmet title={`make/${id}/${carmodel}`}
+            <Helmet title={`${id} ${carmodel} wiper size guide`}
                 htmlAttributes={{ lang: "en" }}
                 meta={[
                     {

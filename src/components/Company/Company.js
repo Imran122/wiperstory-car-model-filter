@@ -33,7 +33,7 @@ const Company = () => {
 
     return (
         <>
-            <Helmet title={`make/${id}`}
+            <Helmet title={`${id} wiper size guide`}
                 htmlAttributes={{ lang: "en" }}
                 meta={[
                     {

@@ -40,7 +40,7 @@ const Make = () => {
                     <div className="row">
                         <div className="col-xl-10 offset-xl-1">
                             <h5 className="ex-header-text">
-                                HOME<Icon icon="ion:chevron-forward-sharp" />
+                                <Link className="text-light text-decoration-none" to="/home"> HOME<Icon icon="ion:chevron-forward-sharp" /></Link>
                                 MAKE <Icon icon="ion:chevron-forward-sharp" />
 
 
