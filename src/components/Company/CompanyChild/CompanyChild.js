@@ -10,7 +10,11 @@ const CompanyChild = (props) => {
         history.push(`/make/${Slugmake}/${Slugmodel}`)
 
     }
-    console.log(Model)
+
+
+    //ekn array of object k theke just model ta ber kortesi
+    // const modelList = props.uniquemodelList.filter((x, i, a) => a.indexOf(x) === i)
+
 
     return (
         <>

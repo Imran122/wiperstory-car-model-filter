@@ -17,6 +17,14 @@ const Company = () => {
     const { id } = useParams();
 
 
+    //finding uniqe model value from the list
+    //new update delivery er por for finding the uniqe model name
+    let uniquemodelList = [...new Map(companyData.map((item) => [item["Model"], item])).values()];
+    const modelList = uniquemodelList.filter(car => car.Model)
+    console.log('xxxx', modelList)
+
+
+
     useEffect(() => {
         fetch(`http://localhost:5000/carlist/${id}`)
             .then(response => response.json())
@@ -63,10 +71,11 @@ const Company = () => {
                         <div className="col-xl-9 ">
                             <h2 className="text-center mt-3 text-uppercase">Choose a {id.toUpperCase()} Model CAR</h2>
                             <div class="items">
-                                {companyData.map(company =>
+                                {modelList.map(company =>
                                     <CompanyChild
                                         key={company._id}
                                         company={company}
+
                                     >
 
                                     </CompanyChild>
