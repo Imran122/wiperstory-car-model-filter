@@ -26,7 +26,7 @@ const Company = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/carlist/${id}`)
+        fetch(`https://testapi.wiperstory.com/carlist/${id}`)
             .then(response => response.json())
             .then(data => setCompanyData(data))
     }, [])

@@ -16,7 +16,7 @@ const Admin = () => {
     const dataSubmit = e => {
         const newDataInfo = { ...dataInfo }
 
-        fetch('http://localhost:5000/uploaddata', {
+        fetch('https://testapi.wiperstory.com/uploaddata', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -5,7 +5,7 @@ const useCarModel = () => {
     const [carlist, setCarList] = useState([])
     //fetch data from fajedb json file
     useEffect(() => {
-        fetch('http://localhost:5000/carlist')
+        fetch('https://testapi.wiperstory.com/carlist')
             .then(response => response.json())
             .then(data => setCarList(data))
     }, [])
