@@ -21,7 +21,7 @@ const Company = () => {
     //new update delivery er por for finding the uniqe model name
     let uniquemodelList = [...new Map(companyData.map((item) => [item["Model"], item])).values()];
     const modelList = uniquemodelList.filter(car => car.Model)
-    console.log('xxxx', modelList)
+    
 
 
 

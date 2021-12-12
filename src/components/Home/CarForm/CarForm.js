@@ -27,7 +27,7 @@ const CarForm = () => {
     let uniqueList = [...new Map(carlist.map((item) => [item["Make"], item])).values()];
 
 
-    console.log('uniq', uniqueList);
+    // console.log('uniq', uniqueList);
     //dependent option work
     //dependent car model code
 
@@ -48,8 +48,11 @@ const CarForm = () => {
     //console.log("my uniqe make data", uniqemakedata)
     //finind the exact model slug from db
     var uniqemodeldata = carlist.find(obj => obj.Model === selectData.model)
-    //console.log("my uniqe model data", uniqemodeldata)
+    //find unique model)
 
+    let uniquemodelList = [...new Map(dependentModelData.map((item) => [item["Model"], item])).values()];
+    const modelList = uniquemodelList.filter(car => car.Model)
+    console.log(' uniqueModelList ', modelList)
     const nextPage = () => {
 
         history.push(`make/${uniqemakedata.Slugmake}/${uniqemodeldata.Slugmodel}`)
@@ -101,7 +104,7 @@ const CarForm = () => {
                                                             <select onChange={handleOnBlur} name="model" className="form-select mt-3" required>
                                                                 <option selected value="">Model</option>
                                                                 {
-                                                                    dependentModelData.map(modelData =>
+                                                                    modelList.map(modelData =>
 
                                                                         <option key={modelData._id} value={modelData.Model} required>
 
