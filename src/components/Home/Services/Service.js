@@ -10,7 +10,7 @@ const Service = () => {
                     <div className="section-title">
                         <h2>Services</h2>
                         <h3>We do offer awesome <span>Services</span></h3>
-                        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                        <p>promises is our strategy and quality of service is our commitment.</p>
                     </div>
 
                     <div className="row">
@@ -19,8 +19,8 @@ const Service = () => {
                                 <div className="icon">
                                     <Icon icon="mdi:account-child-circle" width="50" height="50" />
                                 </div>
-                                <h4 className="title"><a href="">Lorem Ipsum</a></h4>
-                                <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                <h4 className="title"><a href="">Car Chice Plan</a></h4>
+                                <p className="description">You can make your choice by your own. we have various car model in our website</p>
                             </div>
                         </div>
 
@@ -29,8 +29,8 @@ const Service = () => {
                                 <div className="icon">
                                     <Icon icon="mdi:account-child-circle" width="50" height="50" />
                                 </div>
-                                <h4 className="title"><a href="">Sed ut perspiciatis</a></h4>
-                                <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                <h4 className="title"><a href="">Car Rent</a></h4>
+                                <p className="description">We provide car rental service.You can rent car from us at any time from any places.</p>
                             </div>
                         </div>
 
@@ -39,8 +39,8 @@ const Service = () => {
                                 <div className="icon">
                                     <Icon icon="mdi:account-child-circle" width="50" height="50" />
                                 </div>
-                                <h4 className="title"><a href="">Magni Dolores</a></h4>
-                                <p className="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                                <h4 className="title"><a href="">Car Sell</a></h4>
+                                <p className="description">We sell qualityful car and car instruments in our website. You will get the best quality car and car instruments from us.</p>
                             </div>
                         </div>
 
@@ -49,8 +49,8 @@ const Service = () => {
                                 <div className="icon">
                                     <Icon icon="mdi:account-child-circle" width="50" height="50" />
                                 </div>
-                                <h4 className="title"><a href="">Nemo Enim</a></h4>
-                                <p className="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                                <h4 className="title"><a href="">Car Wash</a></h4>
+                                <p className="description">We have garage also.We provide car service and wash for your car.</p>
                             </div>
                         </div>
 

@@ -15,7 +15,7 @@ const CarModel = () => {
 
     useEffect(() => {
 
-        fetch(`https://testapi.wiperstory.com/carlist/${id}/${carmodel}`)
+        fetch(`https://car-make-project.herokuapp.com/carlist/${id}/${carmodel}`)
             .then(response => response.json())
             .then(data => setCompanyData(data))
 

@@ -8,13 +8,12 @@
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 }; */
 const firebaseConfig = {
-    apiKey: "AIzaSyChw_EyhGU3UC-8sVmfa3XVOVC44Sa2438",
-    authDomain: "wiperstory-d400c.firebaseapp.com",
-    projectId: "wiperstory-d400c",
-    storageBucket: "wiperstory-d400c.appspot.com",
-    messagingSenderId: "187920073706",
-    appId: "1:187920073706:web:71bd9645f674ca0295a893",
-    measurementId: "G-8CD3QP86WF"
+    apiKey: "AIzaSyBgN5xh1dh0wBcpYW1uNmqo_HUIeNRlS_E",
+    authDomain: "car-select-make-project.firebaseapp.com",
+    projectId: "car-select-make-project",
+    storageBucket: "car-select-make-project.appspot.com",
+    messagingSenderId: "220344144823",
+    appId: "1:220344144823:web:b134b3bd692cf8c1720e32"
 };
 
 export default firebaseConfig;

@@ -74,7 +74,7 @@ const useFirebase = () => {
 
     useEffect(() => {
 
-        fetch(`https://testapi.wiperstory.com/users/${user.email}`)
+        fetch(`https://car-make-project.herokuapp.com/users/${user.email}`)
             .then(response => response.json())
             .then(data => setAdmin(data.admin))
 
@@ -93,7 +93,7 @@ const useFirebase = () => {
     //save user to mongo DB
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('https://testapi.wiperstory.com/users', {
+        fetch('https://car-make-project.herokuapp.com/users', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

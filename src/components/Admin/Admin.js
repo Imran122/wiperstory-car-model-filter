@@ -16,7 +16,7 @@ const Admin = () => {
     const dataSubmit = e => {
         const newDataInfo = { ...dataInfo }
 
-        fetch('https://testapi.wiperstory.com/uploaddata', {
+        fetch('https://car-make-project.herokuapp.com/uploaddata', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

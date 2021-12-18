@@ -8,7 +8,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email }
-        fetch('https://testapi.wiperstory.com/users/admin', {
+        fetch('https://car-make-project.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

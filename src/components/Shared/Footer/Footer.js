@@ -14,8 +14,8 @@ const Footer = () => {
 
 
                     <div className="footer-items">
-                        <h1>Company Name</h1>
-                        <p>Description of your company product company.</p>
+                        <h1>Wipers-Automobiles</h1>
+                        <p>A best car service system for you..</p>
                     </div>
 
 
@@ -63,7 +63,7 @@ const Footer = () => {
 
 
                 <div className="footer-bottom">
-                    Copyright &copy; wiper story 2021.
+                    Copyright &copy; I-Automobiles 2021.
                 </div>
             </div>
 

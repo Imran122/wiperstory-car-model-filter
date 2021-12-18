@@ -21,12 +21,12 @@ const Company = () => {
     //new update delivery er por for finding the uniqe model name
     let uniquemodelList = [...new Map(companyData.map((item) => [item["Model"], item])).values()];
     const modelList = uniquemodelList.filter(car => car.Model)
-    
+
 
 
 
     useEffect(() => {
-        fetch(`https://testapi.wiperstory.com/carlist/${id}`)
+        fetch(`https://car-make-project.herokuapp.com/carlist/${id}`)
             .then(response => response.json())
             .then(data => setCompanyData(data))
     }, [])
